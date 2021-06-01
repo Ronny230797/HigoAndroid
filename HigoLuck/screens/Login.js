@@ -22,7 +22,6 @@ const Login = ({ navigation }) => {
     return (
         <View style={styles.background}>
             <View style={styles.container}>
-                <Image source={require('../../images/HLlogo.png')} style={styles.image}/>
                 <Text>Book1</Text>
                 <Text>Hola mundo</Text>
             </View>

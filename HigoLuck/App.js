@@ -2,17 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
-import { store } from './app/store/Store';
+import { store } from './store/Store';
 
 
 enableScreens();
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import Home from './app/screens/Home';
-import Settings from './app/screens/Settings';
-import Login from './app/screens/Login';
-import MainScreen from './app/screens/MainScreen';
+import Home from './screens/Home';
+import Settings from './screens/Settings';
+import Login from './screens/Login';
+import MainScreen from './screens/MainScreen';
 
 
 const Stack = createNativeStackNavigator();
