@@ -22,13 +22,13 @@ export default function App(props) {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
+        <Stack.Screen
+            name='Login'
+            component={Login}
+          />
           <Stack.Screen
             name='MainScreen'
             component={MainScreen}
-          />
-          <Stack.Screen
-            name='Login'
-            component={Login}
           />
           <Stack.Screen
             name='Home'

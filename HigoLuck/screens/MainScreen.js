@@ -6,7 +6,7 @@ import SelectedNumbers from '../components/SelectedNumbers';
 const MainScreen = (props) => {
     return (
         <View>
-            <Text>Main Screen</Text>
+            <Text>Vender</Text>
             <View>
             <AddNumber />
             </View>

@@ -1,42 +1,34 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Image } from 'react-native';
+import { StyleSheet, View, Text, Button, Image, TextInput } from 'react-native';
 
 const styles = StyleSheet.create({
     background:{
         backgroundColor:'#FFFFFF'
     },
-    container: {
-        flexDirection: 'row',
-        paddingVertical: 15,
-        paddingLeft: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#E0E0E0'
-    },
-    image:{
-        width:100,
-        height: 100,
-    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+      },
 });
 
 const Login = ({ navigation }) => {
     return (
         <View style={styles.background}>
-            <View style={styles.container}>
-                <Text>Book1</Text>
-                <Text>Hola mundo</Text>
+            <View>
+            <TextInput
+        style={styles.input}
+      />
             </View>
-            <View style={styles.container}>
-                <Text>Book2</Text>
-                <Text>Hola mundo</Text>
+            <View>
+            <TextInput
+        style={styles.input}
+      />
             </View>
-            <View style={styles.container}>
-                <Text>Book3</Text>
-                <Text>Hola mundo</Text>
+            <View>
+            <Button title="Ingresar" onPress={()=> navigation.navigate('Home')}/>
             </View>
         </View>
-
-
-
 
     )
 }
