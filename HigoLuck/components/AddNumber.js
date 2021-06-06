@@ -41,7 +41,8 @@ const AddNumber = (props) => {
         <Picker.Item label="Día" value="Day" />
         <Picker.Item label="Noche" value="Night" />
       </Picker>
-      <Button title='Add' onPress={() => dispatch(addNumber(numberElement))} />
+      {/* <Button title='Add' onPress={() => dispatch(addNumber(numberElement))} /> */}
+      <Button title='Add' onPress={() => props.InsertNumber(numberElement)} />
     </View>
   )
 }

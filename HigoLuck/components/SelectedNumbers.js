@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Button, Image } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeNumber } from '../store/Actions';
 import { Icon } from 'react-native-elements';
+import { ScrollView } from 'react-native';
 
 const styles = StyleSheet.create({
     background: {
@@ -22,14 +23,15 @@ const styles = StyleSheet.create({
 });
 
 const SelectedNumbers = (props) => {
-    const data = useSelector(state => state.listOfNumbers)
-    const dispatch = useDispatch();
+    // const data = useSelector(state => state.listOfNumbers)
+    // const dispatch = useDispatch();
+    
     return (
-        <View style={styles.background}>
-
+        <ScrollView style={styles.background}>
+            <Text>{props.texto}</Text>
             {
-                data.map(element =>
-                    <View style={styles.container} key={element.number}>
+                props.data.map(element =>
+                    <ScrollView style={styles.container} key={element.number}>
                         <Text>Número {element.number}</Text>
                         <Text>Hora {element.dayNight}</Text>
                         <Text>Cantidad {element.amount}</Text>
@@ -39,11 +41,12 @@ const SelectedNumbers = (props) => {
                             size={15}
                             type='font-awesome'
                             color='#f50'
-                            onPress={() => dispatch(removeNumber(element.number))} />
-                    </View>
+                            // onPress={() => dispatch(removeNumber(element.number))}
+                             />
+                    </ScrollView>
                 )
             }
-        </View>
+        </ScrollView>
     )
 }
 
