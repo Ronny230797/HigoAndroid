@@ -28,7 +28,6 @@ const SelectedNumbers = (props) => {
     
     return (
         <ScrollView style={styles.background}>
-            <Text>{props.texto}</Text>
             {
                 props.data.map(element =>
                     <ScrollView style={styles.container} key={element.number}>
@@ -42,6 +41,7 @@ const SelectedNumbers = (props) => {
                             type='font-awesome'
                             color='#f50'
                             // onPress={() => dispatch(removeNumber(element.number))}
+                            onPress={() => props.RemoveNumber(element.number)}
                              />
                     </ScrollView>
                 )
