@@ -14,8 +14,7 @@ const MainScreen = (props) => {
     }
 
     const RemoveNumberFromCarShopping = (id) =>{
-        Alert(id);
-        let newArray = data.filter(number != id);
+        let newArray = data.filter(x => x.number != id);
         setData(newArray);
     }
 
