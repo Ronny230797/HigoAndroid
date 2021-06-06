@@ -5,7 +5,7 @@ const Home = ({ navigation }) => {
     return (
         <View>
             <Button title='Vender' onPress={()=> navigation.navigate('MainScreen')} />
-            <Button title='Reclamar' onPress={()=> navigation.navigate('')} />
+            <Button title='Reclamar' onPress={()=> navigation.navigate('Reward')} />
             <Button title='Configuraciones' onPress={()=> navigation.navigate('Settings')} />
         </View>
     )

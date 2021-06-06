@@ -13,6 +13,7 @@ import Home from './screens/Home';
 import Settings from './screens/Settings';
 import Login from './screens/Login';
 import MainScreen from './screens/MainScreen';
+import Reward from './screens/Reward';
 
 
 const Stack = createNativeStackNavigator();
@@ -38,6 +39,11 @@ export default function App(props) {
             options={{ headerLargeTitle: true }}
             name='Settings'
             component={Settings}
+          />
+          <Stack.Screen
+            options={{ headerLargeTitle: true }}
+            name='Reward'
+            component={Reward}
           />
         </Stack.Navigator>
       </NavigationContainer>

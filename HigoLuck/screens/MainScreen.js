@@ -32,7 +32,7 @@ const MainScreen = (props) => {
             RemoveNumber = {RemoveNumberFromCarShopping}
              />
             </View>
-            <ScrollView><Button title="Listo" /></ScrollView>
+            <ScrollView><Button title="Listo"/></ScrollView>
         </ScrollView>
     )
 }
