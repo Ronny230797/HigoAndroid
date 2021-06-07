@@ -1,5 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Image, TextInput } from 'react-native';
+import { StyleSheet, View, Text, Button, Image, TextInput, Alert } from 'react-native';
+import RNZebraBluetoothPrinter from 'react-native-zebra-bluetooth-printer';
+
+
+
 
 const styles = StyleSheet.create({
     background:{
@@ -12,10 +16,40 @@ const styles = StyleSheet.create({
       },
 });
 
+const showAlert = () =>
+  Alert.alert(
+    "Alert Title",
+    "My Alert Msg",
+    [
+      {
+        text: "Cancel",
+        onPress: () => Alert.alert("Cancel Pressed"),
+        style: "cancel",
+      },
+    ],
+    {
+      cancelable: true,
+      onDismiss: () =>
+        Alert.alert(
+          "This alert was dismissed by tapping outside of the alert dialog."
+        ),
+    }
+  );
+
+  const IsBLActive = () =>{
+    RNZebraBluetoothPrinter.isEnabledBluetooth().then((res) => {
+        if(res == false){
+            console.log('BL Desactivado')
+        }
+    })
+}
+
 const Reward = ({ navigation }) => {
     return (
         <View style={styles.background}>
-            <Text>Reclamar</Text>
+            <Text>Reclamar Premio</Text>
+            <Button title="Reclamar" onPress={IsBLActive}/>
+            <Button title="Show alert" onPress={showAlert} />
         </View>
 
     )
