@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 const showAlert = () =>
   Alert.alert(
     "Alert Title",
-    "My Alert Msg",
+    "New Alert",
     [
       {
         text: "Cancel",
@@ -37,18 +37,43 @@ const showAlert = () =>
   );
 
   const IsBLActive = () =>{
+    
     RNZebraBluetoothPrinter.isEnabledBluetooth().then((res) => {
         if(res == false){
-            console.log('BL Desactivado')
+          Alert.alert('BL Desactivado')
+           
+        }else{
+          Alert.alert('BL Activado')
         }
     })
+}
+
+const PairedDevices = () =>{
+  let deviceAddress = '';
+  RNZebraBluetoothPrinter.pairedDevices().then((deviceArray) => {
+    deviceArray.map(element =>{
+      console.log(element.address)
+      Alert.alert(element.address)
+    })
+})
+}
+
+const Print = () =>{
+  // const zpl = "^XA^FX Top section with company logo, name and address.^CF0,60^FO50,50^GB100,100,100^FS^ FO75,75 ^ FR ^ GB100, 100, 100 ^ FS^ FO88, 88 ^ GB50, 50, 50 ^ FS ^XZ";
+  const zpl = "Hello world";
+  const deviceAddress = '00:11:22:33:44:55';
+  RNZebraBluetoothPrinter.print(deviceAddress,zpl).then((res) => {
+    console.log(res)
+    Alert.alert('Success');
+})
+
 }
 
 const Reward = ({ navigation }) => {
     return (
         <View style={styles.background}>
             <Text>Reclamar Premio</Text>
-            <Button title="Reclamar" onPress={IsBLActive}/>
+            <Button title="Reclamar" onPress={Print}/>
             <Button title="Show alert" onPress={showAlert} />
         </View>
 
