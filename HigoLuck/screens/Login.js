@@ -44,7 +44,6 @@ const Login = ({ navigation }) => {
         );
 
         let json = await response.json();
-
         if (json.userId != undefined) {
             navigation.navigate('Home');
         } else {
@@ -56,6 +55,7 @@ const Login = ({ navigation }) => {
     return (
         <View style={styles.background}>
             <View>
+                <Text>Usuario</Text>
                 <TextInput
                     style={styles.input}
                     onChangeText={setUser}
