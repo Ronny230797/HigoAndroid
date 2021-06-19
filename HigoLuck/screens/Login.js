@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, Text, Button, Image, TextInput } from 'react-native';
-import { showAlert } from '../components/Message';
+import { StyleSheet, View, Text, Button, Image, TextInput, Alert } from 'react-native';
+// import { showAlert } from '../components/Message';
 
 const styles = StyleSheet.create({
     background: {
@@ -12,6 +12,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
 });
+
+
+const showAlert = () =>
+    Alert.alert(
+    "Error",
+    "Credenciales no validas",
+  );
 
 
 const Login = ({ navigation }) => {
