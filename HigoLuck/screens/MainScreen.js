@@ -4,7 +4,7 @@ import { View, Text, Button } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import AddNumber from '../components/AddNumber';
 import SelectedNumbers from '../components/SelectedNumbers';
-
+import PrintBill from '../components/PrintBill';
 
 const MainScreen = (props) => {
     const [data, setData] = useState([]);
@@ -32,7 +32,10 @@ const MainScreen = (props) => {
             RemoveNumber = {RemoveNumberFromCarShopping}
              />
             </View>
-            <ScrollView><Button title="Listo"/></ScrollView>
+            <ScrollView>
+            <PrintBill />
+            </ScrollView>
+            
         </ScrollView>
     )
 }
