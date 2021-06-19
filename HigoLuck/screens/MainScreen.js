@@ -20,7 +20,6 @@ const MainScreen = (props) => {
 
     return (
         <ScrollView>
-            <Text>Vender</Text>
             <View>
             <AddNumber 
             InsertNumber = {AddNumberToShopping}
